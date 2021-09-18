@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>java</title>
+		<style type="text/css">
+		
+		</style>
+		
+	</head>
+	<body>
+		<p>Select a number</p>
+		<p><select id="magicWord">
+			<option>1</option>
+			<option>2</option><option>3</option><option>4</option>
+		</select>
+		<button id="checkMagic">submit</button>
+		 </p>
+		<script type="text/javascript">
+			var value;
+			function doAGuess(value)
+			{
+				var guess=Math.floor((Math.random()*5)+1);
+				if(guess == value)
+					{
+						return (true);
+					}
+				else
+					{
+						return (false);
+					}
+			}
+			
+			document.getElementById("checkMagic").onclick =function()
+				{
+					
+					var textEntered=document.getElementById("magicWord").value;
+					
+					var unbiased=false;
+					var guess=0;
+					while(false == unbiased)
+					{
+						var result=doAGuess(textEntered);
+						if(result == true)
+							{
+								
+								unbiased=true;
+								alert("The number was "+textEntered+". Computer took "+guess+" guessess.");
+							}
+						else
+							{
+								guess++;
+							}
+							
+					}  
+				}		
+		
+		</script>
+	</body>
+</html>

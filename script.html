@@ -1,0 +1,60 @@
+var start=new Date().getTime();
+		
+		//function to generate a random color
+		function getRandomColor() 
+		{
+		  var letters = '0123456789ABCDEF';
+		  var color = '#';
+		  for (var i = 0; i < 6; i++) 
+		  {
+			color += letters[Math.floor(Math.random() * 16)];
+		  }
+		  return color;
+		}
+		
+		//function to genreata height and width of the shape
+		function randomHeight()
+		{
+		var height;
+		height=(Math.random()*70)+20;
+		return (height);
+		}
+		
+		
+		//function to generate different shapes
+		
+		function makeShapeAppear()
+		{
+		var randomColor;
+		var heightAndWidth;
+		document.getElementById("shape").style.display="block";
+		document.getElementById("shape").style.top= (Math.random()*500);
+		document.getElementById("shape").style.left= (Math.random()*500);
+		document.getElementById("shape").style.backgroundColor=getRandomColor();
+		var heightAndWidth=randomHeight();
+		document.getElementById("shape").style.height=heightAndWidth;
+		document.getElementById("shape").style.width=heightAndWidth;
+			if(0.5 < Math.random() )
+				{
+					document.getElementById("shape").style.borderRadius= "50%";
+				}
+			else
+				{
+					document.getElementById("shape").style.borderRadius= "0";
+				}
+		start=new Date().getTime();
+		}
+		
+
+		function appearAfterDelay(){
+		setTimeout(makeShapeAppear, Math.random()*2000);
+		}
+		appearAfterDelay();
+		document.getElementById("shape").onclick= function()
+		{
+			document.getElementById("shape").style.display="none";
+			var end=new Date().getTime();
+			var timeTaken= (end-start)/1000;
+			document.getElementById("timeTaken").innerHTML=timeTaken+"sec";
+			appearAfterDelay();
+		}

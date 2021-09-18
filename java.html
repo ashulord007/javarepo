@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>java</title>
+		
+	
+		
+		</style>
+		
+	</head>
+	<body>
+	
+		<div class="left">
+			<p><input type="text" id="magicWord" placeholder="enter the magic word"></p>
+		</div>
+		<p><button id="checkMagic">click to check</button></p>
+		 
+		 <script type="text/javascript">
+			
+		
+			document.getElementById("checkMagic").onclick =function(){
+				var textEntered=document.getElementById("magicWord").value;
+				var trueMagicWord=Math.floor((Math.random()*5)+1);
+						if(trueMagicWord == textEntered)
+							{
+							
+								alert("you gussed right!");
+								alert("you have won 5 lakhs");
+								
+							}
+						else
+							{
+								alert("the number was "+ trueMagicWord);
+							}
+					}
+		
+		</script>
+	</body>
+</html>

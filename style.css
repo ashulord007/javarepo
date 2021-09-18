@@ -1,0 +1,25 @@
+ #shape {
+	width:100px;
+	height:100px;
+	display:none;
+	position:relative;
+
+	}
+	
+	#tapfast
+	{
+		color:blue;
+		margin:0;
+		padding:0;
+		font-weight:bold;
+		font-size:350%;
+	}
+	
+	#test
+	{
+		
+		margin:0;
+		padding:0;
+		font-style:italic;
+		font-size:160%;
+	}
